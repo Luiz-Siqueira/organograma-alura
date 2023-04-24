@@ -9,37 +9,18 @@ const Formulario = (props) => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState("Cabana na Praia");
 
-  const itens = [
-    "Cabana na Praia",
-    "Cabana na Montanha",
-    "Carpintaria",
-    "Casinha do Jardim",
-    "Clínica do Harvey",
-    "Casa da Fazenda",
-    "Casa da Robin",
-    "Casa da Sam",
-    "Casa da Señor Vincente",
-    "Casa da Willy",
-    "Casa da Jodi",
-    "Casa da Kent",
-    "Casa da Leah",
-    "Casa da Linus",
-    "Casa da Pam",
-    "Gabinete do Prefeito",
-    "JojaMart",
-    "Mansão da Bruxa",
-    "Salão de Beleza da Emily",
-    "Salão de Beleza da Sandy",
-    "Sótão Abandonado",
-    "Torre do Mago",
-    "Caverna do Mutante",
-  ];
 
   const OnSubmit = (event) => {
     event.preventDefault();
+    console.log('aaaqui', time)
     props.handleAddColaborador({ nome, cargo, imagem, time });
+
+    setNome("");
+    setCargo("");
+    setImagem("");
+    setTime("Cabana na Praia");
   };
 
   return (
@@ -67,10 +48,13 @@ const Formulario = (props) => {
           placeholder="Informe o endereço da imagem"
         />
         <CampoSelect
-          valor={time}
-          onChange={(value) => setTime(value)}
+          value={time}
+          onChange={(value) => {
+            console.log('value', value)
+            setTime(value)
+          }}
           label="Casa"
-          itens={itens}
+          itens={props.timeSelect}
         />
         <Button>Criar Card</Button>
       </form>
