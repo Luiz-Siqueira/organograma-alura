@@ -10,7 +10,6 @@ function App() {
 
   const handleColaborador = (colaborador) => {
     setColabores([...colaboradores, colaborador]);
-    console.log(colaborador);
   };
 
   const times = [

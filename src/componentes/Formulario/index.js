@@ -9,18 +9,17 @@ const Formulario = (props) => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
-  const [time, setTime] = useState("Cabana na Praia");
+  const [time, setTime] = useState("");
 
 
   const OnSubmit = (event) => {
     event.preventDefault();
-    console.log('aaaqui', time)
     props.handleAddColaborador({ nome, cargo, imagem, time });
 
     setNome("");
     setCargo("");
     setImagem("");
-    setTime("Cabana na Praia");
+    setTime("");
   };
 
   return (

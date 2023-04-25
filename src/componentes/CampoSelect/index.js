@@ -11,6 +11,7 @@ const CampoSelect = (props) => {
     <div className="campo-texto">
       <label>{props.label}</label>
       <select value={props.value} onChange={oninput}>
+      <option value=""></option>
         {props.itens.map((item)=> <option key={uuidv4()}>{item}</option>)}
       </select>
     </div>

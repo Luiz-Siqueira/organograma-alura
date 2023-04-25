@@ -2,9 +2,10 @@ import "./style.css";
 
 const Colaborador = (props) => {
   const { nome, cargo, imagem } = props.colaborador;
+
   return (
     <div className="colaborador">
-      <div className="cabecalho">
+      <div className="cabecalho" style={{ backgroundColor: `${props.colorBackground}` }}>
         <img src={imagem} alt={nome} />
       </div>
       <div className="rodape">

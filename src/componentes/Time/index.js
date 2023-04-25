@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 import "./style.css";
 
 const Time = (props) => {
-    console.log(props.colaboradores);
     return (
         props.colaboradores.length > 0 &&
         <section
@@ -15,7 +14,7 @@ const Time = (props) => {
             </h3>
             <div className="colaboradores">
                 {props.colaboradores.map((colaborador) => (
-                    <Colaborador key={uuidv4()} colaborador={colaborador} />
+                    <Colaborador colorBackground={props.time.secondaryColor} key={uuidv4()} colaborador={colaborador} />
                 ))}
             </div>
         </section>
